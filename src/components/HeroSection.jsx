@@ -11,26 +11,55 @@ const NavigationLink = styled(Typography)( ({theme}) => ({
 }))
 
 
+const StyledButton = styled(Button)(( {theme}) => ({
+  border:'2px solid grey',
+  color:'white',
+  borderRadius:'4px',
+  textTransform:'uppercase',
+  boxShadow:'none',
+  outline:'none',
+  backgroundColor:'transparent',
+  padding: '0.3rem 1rem',
+  '&:hover':{
+      backgroundColor:`#f9004d`,
+      border:'2px solid #f9004d'
+  }
+}))
+
+
+
 const ImageContainer = styled(Box)( ({theme}) => ({
   maxWidth: "5rem",
   maxHeight: "5rem",
 
   "& img":{
     maxWidth:"100%",
-    maxHeight:"100%"
+    maxHeight:"100%",
+
   }
 }))
+
+// const styledButton = styled(Button)(({theme}) => ({
+//   color: `#c6c9d8 `,
+//   border:`#c6c9d8`,
+
+//   '&:hover':{
+//     color: `#f9004d`,
+//     border:`#f9004d`
+//   }
+// }))
 
 
 const HeroSection = () => {
   return (
     <Box
-      component="div"
-      
+     variant="section"
+    height="130vh"
       sx={{
-        backgroundImage: `url("http://trydo.rainbowit.net/assets/images/bg/bg-image-1.jpg")`,
         backgroundColor: `#00010c`,
-        
+        backgroundImage: `url("http://trydo.rainbowit.net/assets/images/bg/bg-image-1.jpg")`,
+        paddingLeft:"5rem",
+        paddingRight:"5rem"
       }}
     >
       <Box component="div"  >
@@ -55,14 +84,14 @@ const HeroSection = () => {
           </Box>
 
           <Box component="Links" variant="div">
-          <Stack direction="row" gap={4} alignContent="center" alignItems="center">
+          <Stack direction="row" gap={4} alignContent="center" alignItems="center" >
             <NavigationLink variant="a" >Home</NavigationLink>
             <NavigationLink  variant="a" >Services</NavigationLink>
             <NavigationLink  variant="a">About</NavigationLink>
             <NavigationLink  variant="a">Pages</NavigationLink>
             <NavigationLink  variant="a">Blocks</NavigationLink>
             <NavigationLink  variant="a">Contact</NavigationLink>
-            <Button  variant="outlined" color="success" size="large">Login</Button>
+            <StyledButton  variant="outlined" color="inherit" size="large">Login</StyledButton>
           </Stack>
           </Box>
         </Stack>
@@ -72,41 +101,98 @@ const HeroSection = () => {
 
             {/* hero section */}
           <Box variant="div" >
-            <Stack direction="column" justifyContent="space-around">
+            <Stack direction="column" justifyContent="space-around" gap={10} >
 
-              <Box variant="div" >
+              <Box variant="div" sx={{marginTop:"5rem"}} >
                 <Typography variant="h1" >
                 A DIGITAL
                 <br/>
                 AGENCY.
                 </Typography>
               </Box>
+
+
+
               <Box variant="Section" >
-                <Stack direction="row" gap={1} alignItems="center" justifyContent="center">
-                  <Box>
-                    <Stack direction="column" justifyContent="flex-start">
+                <Stack direction="row" gap={1} alignItems="flex-start" justifyContent="space-evenly" >
+
+
+                  <Box sx={{
+                    maxWidth: "25%"
+                  }}>
+                    <Stack direction="column" justifyContent="space-around" aligItems="flex-start" gap={2}>
                     <ImageContainer>
                       <img src="http://trydo.rainbowit.net/assets/images/icons/icon-01.png" alt="logo"  />
                       </ImageContainer>
 
 
-                    <Typography variant="h4">Business Stratagy</Typography>
+                    <Typography variant="h4" sx={{
+                      color:`#c6c9d8`,
+                      fontSize:"1.5rem"
+                    }}>Business Stratagy</Typography>
                     <Typography variant="p" sx={{
-                      opacity:"0.75",
                       fontWeight:"400",
                       fontSize: "1rem",
-                      
+                      color:`#c6c9d8`,
+                      opacity:"0.75"
                     }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</Typography>
                     </Stack>
                   </Box>
-                  <Box>1</Box>
-                  <Box>1</Box>
+
+                  {/* two */}
+                  <Box sx={{
+                    maxWidth: "25%"
+                  }}>
+                    <Stack direction="column" justifyContent="space-around" aligItems="flex-start" gap={1}>
+                    <ImageContainer >
+                      <img src="http://trydo.rainbowit.net/assets/images/icons/icon-02.png" alt="logo"  />
+                      </ImageContainer>
+
+
+                    <Typography variant="h4" sx={{
+                      color:`#c6c9d8`,
+                      fontSize:"1.5rem"
+                    }}>Website Development</Typography>
+                    <Typography variant="p" sx={{
+                      fontWeight:"400",
+                      fontSize: "1rem",
+                      color:`#c6c9d8`,
+                      opacity:"0.75"
+                    }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</Typography>
+                    </Stack>
+                  </Box>
+
+                  {/* three */}
+                  <Box sx={{
+                    maxWidth: "25%"
+                  }}>
+                    <Stack direction="column" justifyContent="space-around" aligItems="flex-start" gap={1}>
+                    <ImageContainer>
+                      <img src="http://trydo.rainbowit.net/assets/images/icons/icon-03.png" alt="logo"  />
+                      </ImageContainer>
+
+                    <Box  variant="div">
+                    <Typography variant="h4" sx={{
+                      color:`#c6c9d8`,
+                     
+                      fontSize:"1.5rem"
+                    }}>Marketing & Reporting</Typography>
+                    </Box>
+                    <Typography variant="p" sx={{
+                      fontWeight:"400",
+                      fontSize: "1rem",
+                      color:`#c6c9d8`,
+                      opacity:"0.75"
+                    }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</Typography>
+                    </Stack>
+                  </Box>
                 </Stack>
               </Box>
+
+
+
             </Stack>
           </Box>
-
-
 
           
     </Box>
