@@ -8,6 +8,8 @@ import Slider from "./components/Slider";
 import Standard from "./components/Standard";
 import LatestNews from "./components/LatestNews";
 import Footer from "./components/Footer";
+
+
 function App() {
   return (
       <>
